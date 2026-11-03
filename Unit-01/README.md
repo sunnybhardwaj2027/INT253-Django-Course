@@ -49,6 +49,27 @@ INT253-Django-Course/
         ├── tests.py           # Automated unit testing suite for the app
         └── views.py           # Where request handling logic and HTTP responses are defined
 
+---
+
+## ⚙️ 4. `django-admin` vs. `manage.py`
+* **`django-admin`**: A global command-line tool installed with Django. Used **outside** of any project directory when initializing a brand new project (e.g., `django-admin startproject <name>`).
+* **`manage.py`**: A project-specific script generated automatically inside your project folder. Used **inside** the project directory to manage that specific application (e.g., `python manage.py runserver`, `python manage.py migrate`, `python manage.py startapp <name>`).
+
+---
+
+## 🔗 5. Registering and Structuring Apps
+
+### Connecting an App to Your Project
+When you create an app using `python manage.py startapp <app_name>`, Django creates the folder, but the project won't recognize it until you register it.
+1. Open your project's `settings.py` file.
+2. Locate the `INSTALLED_APPS` list.
+3. Add your app's name to the list:
+   ```python
+   INSTALLED_APPS = [
+       # ... default django apps ...
+       'core_app',
+   ]
+
 
 ## 📌 Concepts Covered
 - **Projects vs. Apps**: A project is the whole website configuration, while an app is a modular, self-contained feature component.
@@ -62,3 +83,4 @@ INT253-Django-Course/
 - Create a Django app: `python manage.py startapp <app_name>`
 - Run development server: `python manage.py runserver`
 - Apply database migrations: `python manage.py migrate`
+
